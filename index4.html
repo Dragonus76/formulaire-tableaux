@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Formulaire & tableaux</title>
+
+	<meta charset="utf-8">
+</head>
+<body>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+	<span id="un"></span><br/><br/>
+	<span id="deux"></span><br/><br/>
+
+	<button id="copie1">Prénons en majuscules</button>
+	<button id="copie2">Index et prénoms en minuscules</button>
+
+	<script type="text/javascript">
+		
+
+
+		$(function(){
+
+			var tableau = ['ines','anna','mustapha','celestin','ariane','leina','liam'];
+
+			var tableau2;
+
+			$('#un').text('Données originales : ' + tableau.join(','));
+
+			$('#copie1').click(function(){
+
+				tableau2 = $.map(tableau, function(el,ind){
+
+					return (el.toUpperCase());
+				});
+
+				$('#deux').text('Prenons en majuscules :' + tableau2.join(','));
+
+
+			});
+			$('#copie2').click(function(){
+
+				tableau2 = $.map(tableau, function(el,ind){
+
+					return(ind + ' : ' + el.toLowerCase());
+				});
+
+				$('#deux').text('Index et prénoms en minuscules : ' + tableau2.join(','));
+
+			});
+
+		});
+
+
+	</script>
+
+
+
+</body>
+</html>
